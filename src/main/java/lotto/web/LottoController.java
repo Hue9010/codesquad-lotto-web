@@ -25,10 +25,9 @@ public class LottoController {
 	}
 
 	@GetMapping("/matchLotto")
-	public ModelAndView matchLotto(String inputWinningNumber) {
+	public ModelAndView matchLotto(String winningNumber) {
 		ModelAndView mav = new ModelAndView("lotto/result");
-
-		user.matchLottos(machine, inputWinningNumber);
+		user.matchLottos(machine, winningNumber);
 		mav.addObject("result", user.result);
 		mav.addObject("rate", user.calculateRate());
 		return mav;
