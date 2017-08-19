@@ -14,14 +14,13 @@ public class LottoController {
 
 	@GetMapping("/lotto")
 	public ModelAndView showLotto(int inputMoney) {
-//		ModelAndView mav = new ModelAndView("lotto/showLotto");
-		ModelAndView mav = new ModelAndView("showLotto");
+		ModelAndView mav = new ModelAndView("lotto/show");
 
 		machine = new Machine();
 		user = new User(inputMoney);
 		user.buyLottos(machine);
 		mav.addObject("buyLottos", user.buyLottos);
-		mav.addObject("lottoVolue", user.money.lottoVolume());
+		mav.addObject("volume", user.money.lottoVolume());
 		return mav;
 	}
 

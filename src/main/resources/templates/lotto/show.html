@@ -68,8 +68,8 @@ body {
 <body>
 	<form class="form-show" action="/matchLotto">
 		<div class="form-show-div" class="form-group">
-		<h2>지난 주 당첨 번호를 입력해 주세요.</br></h2>예)
-				1,2,3,4,5,6,7 (수동입력시 7개입력)</br>7번째는 보너스 번호, lottery입력시 랜덤 생성</br>
+		<h2>지난 주 당첨 번호를 입력</br></h2>예)
+				1,2,3,4,5,6,7 (꼭! 7개를 입력해주세요.)</br>7번째는 보너스 번호, lottery입력시 랜덤 생성</br>
 				<input type="text" id="inputMoney" class="form-control"
 					name="inputWinningNumber" placeholder="1,2,3,4,5,6,7 or lottery" required autofocus>
 		</div>
@@ -78,13 +78,11 @@ body {
 			</div>
 	</form>
 	<pre class="pre-scrollable">
-		<h4>5개를 구매 하셨습니다.</h4>
+		<h4 class="text-center"><{{volume}}개를 구매 하셨습니다></h4>
 		<table class="table">
 			<thead>
-				<tr>
 					<th></th>
-					<th>numberss</th>
-				</tr>
+					<th class="text-center">로또 번호</th>
 			</thead>
 			<tbody>
 			{{#buyLottos}}
