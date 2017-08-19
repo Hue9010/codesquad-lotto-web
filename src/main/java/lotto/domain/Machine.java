@@ -1,15 +1,15 @@
-package lotto;
+package lotto.domain;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class Machine {
-	private List<Integer> randomNumbers;
-	private static final int normalLotto = 6;
-	private static final int winningLotto = 7;
+	public List<Integer> randomNumbers;
+	public static final int normalLotto = 6;
+	public static final int winningLotto = 7;
 
-	Machine() {
+	public Machine() {
 		randomNumbers = new ArrayList<>();
 		setup();
 	}
@@ -30,7 +30,7 @@ public class Machine {
 
 	private Lotto createLotto(int lottoType) {
 		Collections.shuffle(randomNumbers);
-		List<Integer> lotto = randomNumbers.subList(0, lottoType);
+		List<Integer> lotto = new ArrayList<Integer>(randomNumbers.subList(0, lottoType));
 		Collections.sort(lotto);
 
 		return new Lotto(lotto);

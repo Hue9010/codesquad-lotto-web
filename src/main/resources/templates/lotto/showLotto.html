@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>로또 번호</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#buyLottos}}
+			<tr>
+				<th>{{@index}} 번째 로또: {{lottoNumbers}}</th>
+			</tr>
+			{{/buyLottos}}
+		</tbody>
+	</table>
+</body>
+</html>

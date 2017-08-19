@@ -1,13 +1,13 @@
-package lotto;
+package lotto.domain;
 
 import java.util.List;
 
 public class User {
-	private List<Lotto> buyLottos;
+	public List<Lotto> buyLottos;
 	private Money money;
 	private Result result;
 
-	User(int money) {
+	public User(int money) {
 		this.money = new Money(money);
 	}
 
