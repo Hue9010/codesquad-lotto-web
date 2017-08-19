@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+<style>
+body {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background-color: #eee;
+}
+
+.pre-scrollable {
+	width: 400px;
+	margin: 0 auto;
+}
+
+.table {
+	width: 200px;
+	margin: 0 auto;
+}
+</style>
+</head>
+<body>
+	<form action="/matchLotto">
+		<div class="form-group">
+			<label for="exampleInputEmail1">지난 주 당첨 번호를 입력해 주세요.</br>예)
+				1,2,3,4,5,6,7 (수동입력시 7개입력)\n7번째는 보너스 번호, lottery입력시 랜덤 생성</br>
+			</label> <input type="text" class="form-control" name="inputWinningNumber"
+				id="exampleInputEmail1" placeholder="1,2,3,4,5,6,7 or lottery">
+		</div>
+		<button type="submit" class="btn btn-default">Submit</button>
+	</form>
+	<pre class="pre-scrollable">
+		<h4>5개를 구매 하셨습니다.</h4>
+		<table class="table">
+			<thead>
+				<tr>
+					<th></th>
+					<th>numberss</th>
+				</tr>
+			</thead>
+			<tbody>
+			{{#buyLottos}}
+				<tr>
+					<th>{{@index}}</th>
+					<td>{{lottoNumbers}}</td>
+				</tr>
+			{{/buyLottos}}
+			</tbody>
+		</table>
+	</pre>
+</body>
+</html>

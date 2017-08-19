@@ -14,7 +14,8 @@ public class LottoController {
 
 	@GetMapping("/lotto")
 	public ModelAndView showLotto(int inputMoney) {
-		ModelAndView mav = new ModelAndView("lotto/showLotto");
+//		ModelAndView mav = new ModelAndView("lotto/showLotto");
+		ModelAndView mav = new ModelAndView("showLotto");
 
 		machine = new Machine();
 		user = new User(inputMoney);
