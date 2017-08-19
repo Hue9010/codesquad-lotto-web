@@ -37,17 +37,45 @@ body {
 	width: 200px;
 	margin: 0 auto;
 }
+.form-show {
+	max-width: 330px;
+	padding: 15px;
+	margin: 0 auto;
+}
+.form-show .form-show-heading, .form-show .checkbox {
+	margin-bottom: 10px;
+}
+
+.form-show .form-control {
+	position: relative;
+	height: auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 10px;
+	font-size: 16px;
+}
+
+.submit-button{
+	margin-top: 10px;
+}
+
+.form-lotto .form-control:focus {
+	z-index: 2;
+}
 </style>
 </head>
 <body>
-	<form action="/matchLotto">
-		<div class="form-group">
-			<label for="exampleInputEmail1">지난 주 당첨 번호를 입력해 주세요.</br>예)
-				1,2,3,4,5,6,7 (수동입력시 7개입력)\n7번째는 보너스 번호, lottery입력시 랜덤 생성</br>
-			</label> <input type="text" class="form-control" name="inputWinningNumber"
-				id="exampleInputEmail1" placeholder="1,2,3,4,5,6,7 or lottery">
+	<form class="form-show" action="/matchLotto">
+		<div class="form-show-div" class="form-group">
+		<h2>지난 주 당첨 번호를 입력해 주세요.</br></h2>예)
+				1,2,3,4,5,6,7 (수동입력시 7개입력)</br>7번째는 보너스 번호, lottery입력시 랜덤 생성</br>
+				<input type="text" id="inputMoney" class="form-control"
+					name="inputWinningNumber" placeholder="1,2,3,4,5,6,7 or lottery" required autofocus>
 		</div>
-		<button type="submit" class="btn btn-default">Submit</button>
+		<div class="submit-button">
+				<button class="btn btn-lg btn-primary btn-block" type="submit">당첨 번호</button>
+			</div>
 	</form>
 	<pre class="pre-scrollable">
 		<h4>5개를 구매 하셨습니다.</h4>
