@@ -4,8 +4,8 @@ import java.util.List;
 
 public class User {
 	public List<Lotto> buyLottos;
-	private Money money;
-	private Result result;
+	public Money money;
+	public Result result;
 
 	public User(int money) {
 		this.money = new Money(money);
@@ -14,16 +14,9 @@ public class User {
 	public void buyLottos(Machine machine) {
 		buyLottos = machine.createLottos(money);
 	}
-
-	public void showLottos() {
-		for (Lotto buyLotto : buyLottos) {
-			buyLotto.show();
-		}
-		money.showLottoVolume();
-	}
-
-	public void showResult() {
-		result.showResult(money);
+	
+	public int calculateRate() {
+		return result.showRate(money);
 	}
 
 	public void matchLottos(Machine machine, String winningString) {

@@ -1,11 +1,11 @@
 package lotto.domain;
 
 public class Result {
-	private int countOfMatch3;
-	private int countOfMatch4;
-	private int countOfMatch5;
-	private int countOfMatch6;
-	private int countOfMatchBonus;
+	public int countOfMatch3;
+	public int countOfMatch4;
+	public int countOfMatch5;
+	public int countOfMatch6;
+	public int countOfMatchBonus;
 
 	Result() {
 		countOfMatch3 = 0;
@@ -43,14 +43,28 @@ public class Result {
 		return totalMoney;
 	}
 
-	public void showResult(Money money) {
-		System.out.println("당첨 통계");
-		System.out.println("--------------------");
-		System.out.println("3개 일치 (5000원)- " + countOfMatch3 + "개");
-		System.out.println("4개 일치 (50000원)- " + countOfMatch4 + "개");
-		System.out.println("5개 일치 (1500000원)- " + countOfMatch5 + "개");
-		System.out.println("5개 일치, 보너스 볼 일치(30000000원)- " + countOfMatchBonus + "개");
-		System.out.println("6개 일치 (2000000000원)- " + countOfMatch6 + "개");
-		System.out.println("총 수익률은 " + money.calculateRate(totalMoney()) + "%입니다.");
+	public int showRate(Money money) {
+		return money.calculateRate(totalMoney());
 	}
+
+	public int getCountOfMatch3() {
+		return countOfMatch3;
+	}
+
+	public int getCountOfMatch4() {
+		return countOfMatch4;
+	}
+
+	public int getCountOfMatch5() {
+		return countOfMatch5;
+	}
+
+	public int getCountOfMatch6() {
+		return countOfMatch6;
+	}
+
+	public int getCountOfMatchBonus() {
+		return countOfMatchBonus;
+	}
+	
 }

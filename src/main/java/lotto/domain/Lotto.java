@@ -17,10 +17,6 @@ public class Lotto {
 		lottoNumbers = Collections.unmodifiableList(lotto);
 	}
 
-	public void show() {
-		System.out.println(lottoNumbers);
-	}
-
 	public int matchLotto(Lotto buyLotto) {
 		int count = 0;
 		for (int i = 0; i < lottoSize; i++) {
