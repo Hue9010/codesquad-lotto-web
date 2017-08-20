@@ -2,6 +2,7 @@ package lotto.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import lotto.domain.Machine;
@@ -12,13 +13,14 @@ public class LottoController {
 	Machine machine;
 	User user;
 
-	@GetMapping("/buyLotto")
+	@PostMapping("/buyLotto")
 	public String buyLotto(int inputMoney) {
 		machine = new Machine();
 		user = new User(inputMoney);
 		user.buyLottos(machine);
-		return "/showLotto";
+		return "redirect:/showLotto";
 	}
+	
 	@GetMapping("/showLotto")
 	public ModelAndView showLotto() {
 		ModelAndView mav = new ModelAndView("lotto/show");
@@ -27,12 +29,12 @@ public class LottoController {
 		return mav;
 	}
 
-	@GetMapping("/matchLotto")
+	@PostMapping("/matchLotto")
 	public String matchLotto(String winningNumber) {
 		user.matchLottos(machine, winningNumber);
-		return "/result";
+		return "redirect:/result";
 	}
-	
+
 	@GetMapping("/result")
 	public ModelAndView showResult() {
 		ModelAndView mav = new ModelAndView("lotto/result");
