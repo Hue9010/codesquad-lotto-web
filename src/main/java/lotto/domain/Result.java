@@ -1,11 +1,11 @@
 package lotto.domain;
 
 public class Result {
-	public int countOfMatch3;
-	public int countOfMatch4;
-	public int countOfMatch5;
-	public int countOfMatch6;
-	public int countOfMatchBonus;
+	private int countOfMatch3;
+	private int countOfMatch4;
+	private int countOfMatch5;
+	private int countOfMatch6;
+	private int countOfMatchBonus;
 
 	Result() {
 		countOfMatch3 = 0;

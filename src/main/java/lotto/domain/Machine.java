@@ -5,9 +5,9 @@ import java.util.Collections;
 import java.util.List;
 
 public class Machine {
-	public List<Integer> randomNumbers;
-	public static final int normalLotto = 6;
-	public static final int winningLotto = 7;
+	private List<Integer> randomNumbers;
+	private static final int normalLotto = 6;
+	private static final int winningLotto = 7;
 
 	public Machine() {
 		randomNumbers = new ArrayList<>();

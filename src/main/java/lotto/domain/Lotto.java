@@ -6,10 +6,6 @@ import java.util.List;
 public class Lotto {
 
 	public final List<Integer> lottoNumbers;
-	public List<Integer> getLottoNumbers() {
-		return lottoNumbers;
-	}
-
 	private static final int bonusIndex = 6;
 	private static final int lottoSize = 6;
 	
@@ -33,6 +29,10 @@ public class Lotto {
 			return 1;
 		}
 		return 0;
+	}
+
+	public List<Integer> getLottoNumbers() {
+		return lottoNumbers;
 	}
 
 }
